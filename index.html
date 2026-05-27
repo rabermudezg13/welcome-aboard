@@ -1,25 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome Aboard</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
     }
 
-    body {
+    .spotify { color: #1DB954; }
+    .youtube { color: #FF0000; }
+    .amazon { color: #00A8E1; }
+
+    .welcome-screen {
+      position: absolute;
+      inset: 0;
       background: #050505;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      height: 100vh;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.8s ease;
+    }
+
+    .welcome-title {
+      font-family: 'Cinzel', serif;
+      font-size: 54px;
+      color: #f5d36a;
+      margin-bottom: 24px;
+      text-align: center;
+      text-shadow: 0 0 16px rgba(212,175,55,0.5);
+    }
+
+    .welcome-btn {
+      padding: 18px 38px;
+      border-radius: 20px;
+      border: 2px solid #d4af37;
+      background: transparent;
+      color: #f5d36a;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .welcome-btn:hover {
+      background: rgba(212,175,55,0.12);
+      transform: scale(1.05);
+      box-shadow: 0 0 24px rgba(212,175,55,0.35);
+    }
+
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="welcome-screen" id="welcomeScreen">
+    <div class="welcome-title">WELCOME<br>ABOARD</div>
+    <button class="welcome-btn" onclick="enterExperience()">ENTER</button>
+  </div>
+
+  <div class="container">
+    <div class="card">
+
+      <h1 class="greeting" id="greeting">GOOD EVENING</h1>
+      <p class="subtitle">Enjoy your ride and relax.</p>
+
+      <div class="jam-box">
+        <h2 class="jam-title">ENJOY OUR JAM</h2>
+
+        <p class="jam-text">
+          Put the music you want directly from your phone.
+        </p>
+
+        <img src="qr-jam.jpg" alt="QR Code" class="qr">
+
+        <p class="jam-text">
+          Scan the QR code and connect instantly.
+        </p>
+      </div>
+
+      <a class="button" href="https://open.spotify.com" target="_blank">
+        <span class="spotify">●</span>
+        Access Spotify
 </html>
